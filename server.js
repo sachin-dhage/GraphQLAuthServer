@@ -2,6 +2,7 @@
 import express from 'express';
 import { ApolloServer } from "apollo-server-express";
 import bodyParser from "body-parser";
+import userServices from "./services/userServices";
 
 
 // Import GraphQL types
@@ -48,7 +49,6 @@ const graphQLServer = new ApolloServer({
        
         // add the user to the context
         return { req, user };
-
     }
 });
 
