@@ -104,7 +104,7 @@ const requestUser = async (token) =>
       return email;
     }
   
-    throw new AuthorizationError('Not authenticated');
+    throw new Error('Not authenticated');
 }
   
 
