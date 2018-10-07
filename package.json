@@ -27,6 +27,9 @@
     "session-file-store": "^1.2.0",
     "uuid": "^3.3.2"
   },
+  "engines": {
+    "node": "8.11.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
