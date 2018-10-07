@@ -95,7 +95,7 @@ const isValidPassword = async (savedPassword, inputPassword) =>
 
 
 // Checking if user id is valid
-const requestUser = async (context) =>
+const requestUser = async (token) =>
 {
     if (token) 
     {
