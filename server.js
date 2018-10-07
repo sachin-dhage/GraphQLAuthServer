@@ -44,7 +44,7 @@ const graphQLServer = new ApolloServer({
 
         // optionally block the user
         // we could also check user roles/permissions here
-        if (!user) throw new AuthorizationError('you must be logged in'); 
+        if (!user) throw new Error('you must be logged in'); 
 
        
         // add the user to the context
