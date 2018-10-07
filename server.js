@@ -33,7 +33,23 @@ const graphQLServer = new ApolloServer({
     typeDefs : graphQLTypes,
     resolvers : graphQLResolvers,
     introspection: true,
-    playground: true
+    playground: true,
+    context: async ({ req }) => {
+        // get the user token from the headers
+        const token = req.headers.authorization || '';
+       
+        // try to retrieve a user with the token
+        const user = await userServices.requestUser(token);
+
+        // optionally block the user
+        // we could also check user roles/permissions here
+        if (!user) throw new AuthorizationError('you must be logged in'); 
+
+       
+        // add the user to the context
+        return { req, user };
+
+    }
 });
 
 
