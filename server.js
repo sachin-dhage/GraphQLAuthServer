@@ -32,10 +32,8 @@ webServer.use(bodyParser.json());
 const graphQLServer = new ApolloServer({
     typeDefs : graphQLTypes,
     resolvers : graphQLResolvers,
-    context : ()=>({req, res})
-    //introspection: true,
-    //playground: true
-    
+    introspection: true,
+    playground: true
 });
 
 
