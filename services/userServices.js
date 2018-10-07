@@ -97,18 +97,14 @@ const isValidPassword = async (savedPassword, inputPassword) =>
 // Checking if user id is valid
 const requestUser = async (context) =>
 {
-    console.log(`context.request ::: ${JSON.stringify(context)}`);
-    
-    let authorization = context.get('Authorization');
-
-    if (authorization) 
+    if (token) 
     {
-      let token = authorization.replace('Bearer ', '');
+      token = token.replace('Bearer ', '');
       let { email } = jwt.verify(token, APP_SECRET);
       return email;
     }
   
-    throw new Error('Not authenticated');
+    throw new AuthorizationError('Not authenticated');
 }
   
 
