@@ -4,8 +4,9 @@ import userServices from "../services/userServices";
 const loggedInUser = async (root, args, context, info) =>
 {
     //console.log(`context : ${JSON.stringify(context)}`);
+    let token = context.token;
 
-    let email = context.user;
+    let email = await userServices.requestUser(token);
     //console.log(`email : ${email}`);
 
     let user = await userServices.userDetails({email});            
