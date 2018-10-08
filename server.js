@@ -2,7 +2,6 @@
 import express from 'express';
 import { ApolloServer } from "apollo-server-express";
 import bodyParser from "body-parser";
-import userServices from "./services/userServices";
 
 
 // Import GraphQL types
@@ -39,16 +38,9 @@ const graphQLServer = new ApolloServer({
         // get the user token from the headers
         const token = req.headers.authorization || '';
        
-        // try to retrieve a user with the token
-        const user = await userServices.requestUser(token);
+        // add the token to the context
+        return { token };
 
-        // optionally block the user
-        // we could also check user roles/permissions here
-        if (!user) throw new Error('you must be logged in'); 
-
-       
-        // add the user to the context
-        return { req, user };
     }
 });
 
