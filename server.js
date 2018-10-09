@@ -3,6 +3,10 @@ import express from 'express';
 import { ApolloServer } from "apollo-server-express";
 import bodyParser from "body-parser";
 
+var https = require("https");
+setInterval(function() {
+    https.get("https://graphqlauthserver.herokuapp.com/authserver");
+}, 1200000); // every 5 minutes (300000)
 
 // Import GraphQL types
 import graphQLTypes from './graphql/types';
