@@ -100,6 +100,7 @@ const requestUser = async (token) =>
     if (token) 
     {
       token = token.replace('Bearer ', '');
+      token = token.trim();
       let { email } = jwt.verify(token, APP_SECRET);
       return email;
     }
