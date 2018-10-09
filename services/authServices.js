@@ -3,9 +3,11 @@ import userServices from "../services/userServices";
 // resolver function for query
 const loggedInUser = async (root, args, context, info) =>
 {
-    //console.log(`context : ${JSON.stringify(context)}`);
+    console.log(`context : ${JSON.stringify(context)}`);
     let token = context.token;
-
+    
+    console.log(`token : ${token}`);
+    
     let email = await userServices.requestUser(token);
     //console.log(`email : ${email}`);
 
