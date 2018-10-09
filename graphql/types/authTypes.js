@@ -30,6 +30,9 @@ const typeDefs = gql`
             email       : String!,
             password    : String!
         ) : String
+
+        # Logout user locally
+        localLogout : String
     }
 `;
 

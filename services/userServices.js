@@ -28,7 +28,7 @@ const localUserRegistration = async (user) =>
         let newUser = await new userModel(user).save();
 
         // create the jwt
-        let token = jwt.sign({ email: user.email }, APP_SECRET);
+        let token = jwt.sign({ email: user.email }, APP_SECRET, { expiresIn : "1d"});
 
         return token;
     } 
@@ -69,7 +69,7 @@ const localUserLogin = async (user) =>
        // return existingUser;
 
         // create the jwt
-        let token = jwt.sign({ email: user.email }, APP_SECRET);
+        let token = jwt.sign({ email: user.email }, APP_SECRET, { expiresIn : "1d"});
 
         return token;
 

@@ -16,7 +16,11 @@ const resolvers =
         localSignUp : authServices.localSignUp,
 
         // Resolver for localLogin : String
-        localLogin : authServices.localLogin
+        localLogin : authServices.localLogin,
+
+        // Resolver for localLogout : String
+        localLogout : authServices.localLogout
+
     }
 };
 
