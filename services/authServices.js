@@ -3,7 +3,7 @@ import userServices from "../services/userServices";
 // resolver function for query
 const loggedInUser = async (root, args, context, info) =>
 {
-    console.log(`context : ${JSON.stringify(context)}`);
+    //console.log(`context : ${JSON.stringify(context)}`);
     let token = context.token;
     
     console.log(`token : ${token}`);

@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 
 //Set up default mongoose connection
 //var mongoDB_URI = 'mongodb+srv://itss:itss1234@cluster0-4uuqd.mongodb.net/test';           // New host
-
 var mongoDB_URI = 'mongodb://algorithmus:algorithmus1234@ds125293.mlab.com:25293/authdb';           // Remote host
 //var mongoDB_URI = 'mongodb://localhost/algorithmus';           // Local host
 

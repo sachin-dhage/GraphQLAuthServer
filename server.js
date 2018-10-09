@@ -56,6 +56,7 @@ graphQLServer.applyMiddleware({
     path:PATH
 });
 
+
 webServer.listen(PORT, () => {
     console.log(`GraphQL Server is now running on http://localhost:${PORT.port}${PATH}`);
     console.log(`Go to http://localhost:${PORT.port}${PATH} to run queries!`);
