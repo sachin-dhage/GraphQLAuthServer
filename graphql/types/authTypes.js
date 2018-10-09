@@ -5,8 +5,9 @@ const typeDefs = gql`
 
     type User
     {
-        email       : String!,
-        password    : String!
+        firstname   : String,
+        lastname    : String,
+        email       : String
     }
 
     type Query
@@ -16,12 +17,15 @@ const typeDefs = gql`
 
     type Mutation
     {
+        # Register user locally
         localSignUp(
+            firstname   : String!,
+            lastname    : String,
             email       : String!,
             password    : String!
         ) : String
 
-
+        # Login user locally
         localLogin(
             email       : String!,
             password    : String!
