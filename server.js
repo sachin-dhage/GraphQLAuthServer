@@ -17,7 +17,9 @@ import graphQLResolvers from './graphql/resolvers';
 //console.log(graphQLTypes);
 
 // Set the port number
-const PORT = 5555;
+//const PORT = 5555;
+const PORT = {port : process.env.PORT || 3402};
+
 
 // Set the end point 
 const PATH = "/authserver";
@@ -54,8 +56,8 @@ graphQLServer.applyMiddleware({
     path:PATH
 });
 
-webServer.listen({port : process.env.PORT || PORT}, () => {
-    console.log(`GraphQL Server is now running on http://localhost:${PORT}${PATH}`);
-    console.log(`Go to http://localhost:${PORT}${PATH} to run queries!`);
+webServer.listen(PORT, () => {
+    console.log(`GraphQL Server is now running on http://localhost:${PORT.port}${PATH}`);
+    console.log(`Go to http://localhost:${PORT.port}${PATH} to run queries!`);
     console.log('------------------------------------------------------');
   });
